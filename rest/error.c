@@ -1,48 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 19:55:10 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/05 21:47:05 by learodri         ###   ########.fr       */
+/*   Created: 2023/01/03 19:42:40 by learodri          #+#    #+#             */
+/*   Updated: 2023/01/04 20:50:13 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "../push_swap.h"
 
-int main(int argc, char *argv[])
+void	boom(t_stack **a, char *str)
 {
-	(void)argc;
-    //(void)argv;
-
-	t_stack *a;
-	t_stack *tmp;
+	t_stack	*tmp;
 	
-	//int i = 1;
-	a = NULL;
-	//int n = 0;
-	
-	if(argc <= 1)
-		boom(&a, "arg menor ou igual 1");
-
-	//char_check(argv);
-	parse_arg(&a, argv);
-	
-	//swap_a(&a);
-	rotate_a(&a);
-
-	// verificar stack
-	tmp = a;
-
-	while(tmp != NULL){
-		printf("%d \n",tmp->nb);
-		tmp= tmp->proximo;
+	perror(str);
+	write(2, "\n", 1);
+	write(2,"Error\n", 6);
+	if(*a)
+	{
+		while(*a)
+		{
+			tmp = (*a);
+			(*a) = (*a)->proximo;
+			free(tmp);
+		}
 	}
-	
-	
-	
-	return (0);
+
+	exit(0);
+}
+
+void	boom2(char *str)
+{
+	perror(str);
+	exit(0);
 }
 
