@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:55:10 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/05 21:47:05 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:19:56 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ int main(int argc, char *argv[])
 	//char_check(argv);
 	parse_arg(&a, argv);
 	
-	//swap_a(&a);
-	rotate_a(&a);
+	if (a_is_sorted(a))
+		boom(&a, "ja ta sortido parca");
+	if (ft_lstsize(a) == 2)
+		swap_a(&a);
+	if (ft_lstsize(a) == 3)
+		sort_3(&a);
 
 	// verificar stack
 	tmp = a;

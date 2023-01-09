@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 18:59:07 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/03 19:29:22 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:13:40 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,17 @@ t_stack *create_node(int n)
 
     return (temp);
     
+}
+
+int	ft_lstsize(t_stack *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		lst = lst->proximo;
+		size++;
+	}
+	return (size);
 }

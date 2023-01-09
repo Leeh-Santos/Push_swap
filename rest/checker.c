@@ -6,11 +6,11 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 20:49:48 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/05 20:25:23 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:20:31 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+# include "../push_swap.h"
 
 /*void	char_check(char **argv)
 {
@@ -44,6 +44,18 @@ bool has_duplicates(t_stack *a, int n)
         a = a->proximo;
     }  
     return false;
+}
+
+int	a_is_sorted(t_stack *a)
+{
+	while (a->proximo)
+	{
+		if (a->nb > a->proximo->nb)
+			return (0);
+		a = a->proximo;
+	}
+	return (1);
+	
 }
 
 

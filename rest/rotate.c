@@ -6,11 +6,11 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 21:25:00 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/05 21:58:07 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/09 18:32:24 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+# include "../push_swap.h"
 
 //the first element becomes the last one.
 void    rotate_a(t_stack **a)
@@ -30,5 +30,33 @@ void    rotate_a(t_stack **a)
 
 	atual->proximo = tp; // atribui o tp que tem o a al final da lista
 	tp->proximo = NULL; // aponta ele null p encerrar lista
+	write(1, "ra\n", 3);
+}
+
+void    rotate_b(t_stack **b)
+{
+	t_stack *tp;
+	t_stack *atual;
+
+	tp = *b;
+	*b = (*b)->proximo;
+
+	atual = *b;
+
+	while (atual->proximo != NULL)
+	{
+		atual = atual->proximo;
+	}
+
+	atual->proximo = tp;
+	tp->proximo = NULL;
+	write(1, "rb\n", 3);
+}
+
+void	rotate_a_b(t_stack **a, t_stack **b)
+{
+	rotate_a(a);
+	rotate_b(b);
+	write(1, "rr\n", 3);
 
 }

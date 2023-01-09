@@ -6,6 +6,8 @@ SRCS	= main.c \
 					rest/swap.c \
 					rest/push.c \
 					rest/rotate.c \
+					rest/r_rotate.c \
+					rest/sort_chill.c \
 
 OBJS	= $(SRCS:.c=.o)
 
