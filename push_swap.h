@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:07:54 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/09 21:22:10 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:21:39 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 typedef struct s_stack{
     int nb;
+    int	index;
     struct s_stack *proximo;
 
 } t_stack;
@@ -34,17 +35,28 @@ int	ft_lstsize(t_stack *lst);
 void	boom2(char *str);
 void	char_check(char **argv);
 bool has_duplicates(t_stack *a, int n);
+void	add_index(t_stack **a);
 
 int	a_is_sorted(t_stack *a);
-void    sort_3(t_stack **a);
+
 
 void    swap_a(t_stack **a);
 void    swap_b(t_stack **b);
 void    swap_ab(t_stack **a, t_stack **b);
 
 void    rotate_a(t_stack **a);
+void    rotate_b(t_stack **b);
+void	rotate_a_b(t_stack **a, t_stack **b);
 
 void	reverse_a(t_stack **a);
+void	reverse_b(t_stack **b);
+void	reverse_a_b(t_stack **a, t_stack **b);
+
+void    push_a(t_stack **a, t_stack **b);
+void    push_b(t_stack **a, t_stack **b);
+
+void    for_3(t_stack **a);
+void	for_4(t_stack **a, t_stack **b);
 
 
 

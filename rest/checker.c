@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 20:49:48 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/09 21:20:31 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/11 20:55:27 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,31 @@ int	a_is_sorted(t_stack *a)
 	}
 	return (1);
 	
+}
+
+void	add_index(t_stack **a)
+{
+	int		i;
+	t_stack	*tmp;
+	int		max;
+
+	max = INT_MIN; // int min aqui
+	i = ft_lstsize(*a) + 1; // tamanho da lista
+	while (--i > 0)
+	{
+		tmp = *a;
+		max = INT_MIN;
+		while (tmp)
+		{
+			if (tmp->nb > max && tmp->index == 0) // se o nb do node atual for maior que o minino e index em 0 
+				max = tmp->nb; //max fica com o nb
+			tmp = tmp->proximo; // proximo node 
+		}
+		tmp = *a;
+		while (tmp->nb != max)
+			tmp = tmp->proximo;
+		tmp->index = i;
+	}
 }
 
 
