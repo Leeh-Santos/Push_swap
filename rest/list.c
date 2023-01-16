@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 18:59:07 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/09 21:13:40 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:17:34 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_stack *create_node(int n)
         return NULL;
 
     temp->nb = n;
+	temp->index = 0;
     temp->proximo = NULL;
 
     return (temp);

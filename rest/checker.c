@@ -6,33 +6,33 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 20:49:48 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/11 20:55:27 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:04:38 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../push_swap.h"
 
-/*void	char_check(char **argv)
+void	char_check(char **argv, t_stack **a)
 {
 	int	i;
-	int	k;
-
-	i = 1;
-	while (argv[i])
+	int k;
+	i = 0;
+	k = 1;
+	
+	while (argv[k])
 	{
-		k = 0;
-		while (argv[i][k])
+		i = 0;
+		while (argv[k][i])
 		{
-			if ((argv[i][k] < 48 && argv[i][k] > 57) && argv[i][k] != '-' && argv[i][k] != '+' && argv[i][k] != ' ')
-					boom2("tem um char ai fera");
-			printf("%c", argv[i][k]);
-
-			k++;	
+			if ((argv[k][i] >= 48 && argv[k][i] <= 57) || argv[k][i] == '-' || argv[k][i] == '+' || argv[k][i] == ' ')
+				 i++;
+			else 
+				boom(a);
 		}
-		i++;
+		k++;
 	}
-	printf("\n");
-}*/
+				
+}
 
 bool has_duplicates(t_stack *a, int n)
 {

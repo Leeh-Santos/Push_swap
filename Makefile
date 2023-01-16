@@ -8,6 +8,7 @@ SRCS	= main.c \
 					rest/rotate.c \
 					rest/r_rotate.c \
 					rest/sort_chill.c \
+					rest/radix.c \
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -15,7 +16,7 @@ NAME	= push_swap
 
 CC		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror #-g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 RM		= rm -rf
 

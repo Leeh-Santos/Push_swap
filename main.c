@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:55:10 by learodri          #+#    #+#             */
-/*   Updated: 2023/01/11 21:51:44 by learodri         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:17:19 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,28 @@ int main(int argc, char *argv[])
 	b = NULL;
 	
 	
-	if(argc <= 1)
-		boom(&a, "arg menor ou igual 1");
+	if(argc <= 2)
+		end_push(&a);
 
-	//char_check(argv);
+	
+	char_check(argv, &a);
 	parse_arg(&a, argv);
 	add_index(&a);
 	if (a_is_sorted(a))
-		boom(&a, "ja ta sortido parca");
+		end_push(&a);
 	if (ft_lstsize(a) == 2)
 		swap_a(&a);
 	if (ft_lstsize(a) == 3)
 		for_3(&a);
 	if (ft_lstsize(a) == 4)
 		for_4(&a, &b);
+	if (ft_lstsize(a) == 5)
+		for_5(&a, &b);
+	if (ft_lstsize(a) > 5)
+		radix(&a, &b);
+	end_push(&a);
+	
 
-	// verificar stack
 	tmp = a;
 
 	while(tmp != NULL){
