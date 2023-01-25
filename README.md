@@ -38,3 +38,21 @@ Shift down all elements of the stack by one; the last element becomes the first.
 * **`rra`** - reverse rotate stack a.
 * **`rrb`** - reverse rotate stack b.
 * **`rrr`** - `rra` and `rrb` at the same time
+
+**1Compiling the program**
+
+To compile the program, run:
+
+```shell
+$ make
+```
+
+**2. Executing the program**
+
+To execute the program, run:
+
+```shell
+$ ./push_swap $ARG
+```
+
+where `$ARG` is a space separated list of integers, e.g. `ARG="1 5 2 4 3"`
